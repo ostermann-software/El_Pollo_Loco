@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+    <title>El pollo loco</title>
+    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <script src="classes/drawable_object.class.js"></script>
+    <script src="classes/movable_objects.class.js"></script>
+    <script src="classes/character.class.js"></script>
+    <script src="classes/chicken.class.js"></script>
+    <script src="classes/chicken_small.class.js"></script>
+    <script src="classes/cloud.class.js"></script>
+    <script src="classes/background_objects.class.js"></script>
+    <script src="classes/endboss.class.js"></script>
+    <script src="classes/coin.class.js"></script>
+    <script src="classes/bottle.class.js"></script>
+    <script src="classes/status_bar.class.js"></script>
+    <script src="classes/status_bar_bottle.class.js"></script>
+    <script src="classes/status_bar_coin.class.js"></script>
+    <script src="classes/world.class.js"></script>
+    <script src="classes/throwable_object.class.js"></script>
+    <script src="classes/key.class.js"></script>
+    <script src="classes/level.class.js"></script>
+    <script src="levels/level1.js"></script>
+    <script src="js/game.js"></script>
+
+</head>
+
+<body onload="init()">
+
+
+
+    <div id="game-container" style="position: relative;">
+
+        <div class="overlayDisplay">
+            <p>Drehe Dein Gerät in Querformat!</p>
+        </div>
+
+        <div class="overlay-description" id="overlayDescription">
+            <p>Anleitung:</p>
+            <p>1. Sammle soviele Flaschen wie möglich ein.</p>
+            <p>2. Werfe mit den Flaschen auf die Hühner.</p>
+            <p> Ein Treffer genügt.</p>
+            <p>3. Vermeide den Kontakt zu den Hühnern.</p>
+            <p>4. Am Ende besiege den Endboss.</p>
+            <p> Dazu benötigst Du 10 Treffer.</p>
+            <button onclick="closeDescription()" class="buttonA">zurück</button>
+        </div>
+
+        <div class="overlay-description" id="overlayImpressum">
+            <p>Impressum</p>
+            <p>Informationen über den Dienstanbieter.</p>
+            <p>Christian Mustermann</p>
+            <p>Weg 1a</p>
+            <p>12345 Stadt</p>
+            <p>E-Mail: email@email.de</p>
+            <p>Tel.: 0123 456789</p>
+            <button onclick="closeImpressum()" class="buttonA">zurück</button>
+        </div>
+
+        <div id="start-screen" class="overlay">
+            <!-- <h1>El pollo loco</h1> -->
+            <img src="img/9_intro_outro_screens/start/startscreen_1.png" alt="">
+
+            <div class="legency">
+                <div class="Startbutton">
+                    <button onclick="startGame()" class="buttonS">Spiel starten</button>
+                    <button onclick="showDescription()" class="buttonA">Anleitung</button>
+                    <button onclick="showImpressum()" class="buttonA">Impressum</button>
+                    <!-- <button onclick="fullscreen()" class="buttonS">Vollbild</button>
+                <button onclick="exitFullscreen()" class="buttonS">Kleinbild</button> -->
+                </div>
+                <div class="legencyT">Pfeil links/rechts: laufe</div>
+                <div class="legencyT">Leertaste: springe</div>
+                <div class="legencyT">d: werfe Flasche</div>
+            </div>
+        </div>
+
+        <canvas id="canvas" width="720" height="480" style="display: none;"></canvas>
+
+        <div class="mainButton">
+            <button id="buttonMute" tabindex="-1">🔈Sound aus</button>
+        </div>
+
+        <div class="controls" id="touch-controls">
+            <div class="controls-left">
+                <button id="buttonL" class="buttonS">←</button>
+                <button id="buttonR" class="buttonS">→</button>
+            </div>
+            <div class="controls-right">
+                <button id="buttonU" class="buttonS">↑</button>
+                <button id="buttonD" class="buttonS">🎯</button>
+            </div>
+        </div>
+
+
+        <div id="game-over-screen" class="overlay hidden">
+            <img src="img/9_intro_outro_screens/game_over/end_lost.png" id="game-over-pic" alt="">
+            <button onclick="init(), restartGame()" class="button">Nochmal spielen</button>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
