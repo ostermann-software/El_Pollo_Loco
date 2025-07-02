@@ -15,6 +15,7 @@ async function init() {
 
 function startGame() {
     canvas = document.getElementById('canvas');
+    document.getElementById('game-over-screen').style.display = 'none';
     document.getElementById('start-screen').style.display = 'none';
     document.getElementById('canvas').style.display = 'block';
     document.getElementById('touch-controls').style.display = 'flex';

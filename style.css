@@ -44,6 +44,28 @@ canvas {
     z-index: 10;
 }
 
+.buttonEnde {
+    position: absolute;
+    top: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.buttonE {
+    position: relative;
+    margin-top: 10%;
+    width: 100px;
+    padding: 10px;
+    border-radius: 100%;
+    border-color: #c96a1c;
+    background-color: rgb(255, 153, 0);
+    z-index: 20;
+    cursor: pointer;
+    font-size: 16px;
+}
+
 /* .overlay2 {
     position: absolute;
     width: auto;
@@ -140,9 +162,11 @@ canvas {
 
 .buttonS {
     position: relative;
+    width: 100px;
     /* margin-bottom: 10%; */
     /* width: 10%;
     height: 10%; */
+    margin-top: 10%;
     padding: 10px;
     border-radius: 100%;
     border-color: #c96a1c;
@@ -155,6 +179,7 @@ canvas {
 .buttonA {
     position: relative;
     width: 100px;
+    margin-top: 10%;
     padding: 10px;
     border-radius: 100%;
     border-color: #c96a1c;
