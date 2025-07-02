@@ -3,7 +3,11 @@ let world;
 let keyboard = new Keyboard();
 let isMuted = false;
 
-function init() {
+
+async function init() {
+    await loadLocalStorage();
+    const muteButton = document.getElementById('buttonMute');
+    muteButton.innerText = isMuted ? '🔇 Sound an' : '🔈 Sound aus';
     document.getElementById('start-screen').style.display = 'flex';
     document.getElementById('canvas').style.display = 'none';
     document.getElementById('game-over-screen').style.display = 'none';
@@ -105,6 +109,7 @@ function toggleMuteState() {
     }
     const muteButton = document.getElementById('buttonMute');
     muteButton.innerText = isMuted ? '🔇 Sound an' : '🔈 Sound aus';
+    saveLocalStorage();
 }
 
 
@@ -227,5 +232,16 @@ window.addEventListener('load', () => {
 
 
 
+function saveLocalStorage() {
+    let local_isMuted = JSON.stringify(isMuted);
+    localStorage.setItem('isMuted', local_isMuted);
+}
 
+
+async function loadLocalStorage() {
+    let local_isMuted = localStorage.getItem('isMuted');
+    if (local_isMuted) {
+        isMuted = JSON.parse(local_isMuted);
+    }
+}
 
