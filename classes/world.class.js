@@ -26,11 +26,22 @@ class World {
     soundChickenDead = new Audio('audio/chickenDead.mp3');
     soundEndbossDead = new Audio('audio/endbossDead.mp3');
 
+
     constructor(canvas, keyboard) {
         this.ctx = canvas.getContext('2d');
         this.canvas = canvas;
         this.keyboard = keyboard;
         this.canThrow = true;
+        this.soundBack.volume = 1.0;
+        this.soundChicken.volume = 0.3;
+        this.soundBottle.volume = 0.1;
+        this.soundCoin.volume = 0.1;
+        this.soundSmash.volume = 0.1;
+        this.soundHurt.volume = 0.1;
+        this.soundJump.volume = 0.02;
+        this.soundThrow.volume = 0.1;
+        this.soundChickenDead.volume = 0.3;
+        this.soundEndbossDead.volume = 0.4;
         this.draw();
         this.setWorld();
         this.run();
@@ -87,7 +98,7 @@ class World {
 
         this.throwableObjects.forEach(bottle => {
             const index = this.throwableObjects.indexOf(bottle);
-            if(bottle.pos_y > 350) {
+            if (bottle.pos_y > 350) {
                 this.throwableObjects.splice(index, 1);
             }
             for (let i = this.level.enemies.length - 1; i >= 0; i--) {
