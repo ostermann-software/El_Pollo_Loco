@@ -57,6 +57,8 @@ class World {
             this.checkThrowObjects();
             this.checkCollisions();
             this.checkGameOver();
+            console.log(this.character.pos_y, this.character.wasAboveGround(), 'time:', this.character.aboutGroundTime, 'speed:', this.character.speedY);
+            
         }, 100);
     }
 
@@ -82,13 +84,20 @@ class World {
     }
 
     checkCollisions() {
-        this.level.enemies.forEach(enemy => {
-            if (this.character.isColliding2(enemy, 'enemy')) {
-                this.character.hit();
-                this.statusBar.setPercentage(this.character.energy);
+        for (let i = this.level.enemies.length - 1; i >= 0; i--) {
+            const enemy = this.level.enemies[i];
+            const thisIsEndboss = this.level.enemies[i] instanceof Endboss;
+            if (this.character.isColliding2(enemy, 'enemy') && !enemy.dead) {
+                if (!this.character.wasAboveGround()) {
+                    this.character.hit();
+                    this.statusBar.setPercentage(this.character.energy);
+                } else {
+                    this.playSound(this.soundChickenDead, true);
+                    enemy.die(i);
+                }
             }
             enemy.enemyDead();
-        });
+        };
 
         for (let i = this.level.enemies.length - 1; i >= 0; i--) {
             if (this.level.enemies[i].delete) {

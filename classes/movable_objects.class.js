@@ -11,6 +11,7 @@ class MovableObject extends DrawableObject {
     dead_old = false;
     deadTime = 0;
     delete = false;
+    aboutGroundTime = 0;
 
     moveRight() {
         this.pos_x += this.speed;
@@ -58,6 +59,18 @@ class MovableObject extends DrawableObject {
         } else {
             return this.pos_y < 230;
         }
+    }
+
+    wasAboveGround() {
+        if (this.pos_y < 234 && this.speedY < 0) {
+            this.aboutGroundTime = 5;
+        } else {
+            this.aboutGroundTime -= 1;
+            if (this.aboutGroundTime < 0) {
+                this.aboutGroundTime = 0;
+            }
+        }
+        return this.aboutGroundTime !== 0;
     }
 
     isColliding(mo) {
