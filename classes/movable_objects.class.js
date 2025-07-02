@@ -63,7 +63,7 @@ class MovableObject extends DrawableObject {
 
     wasAboveGround() {
         if (this.pos_y < 220 && this.speedY < 0) {
-            this.aboutGroundTime = 3;
+            this.aboutGroundTime = 2;
         } else {
             this.aboutGroundTime -= 1;
             if (this.aboutGroundTime < 0) {
