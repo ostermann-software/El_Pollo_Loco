@@ -229,6 +229,10 @@ canvas {
     z-index: 10;
 }
 
+.buttonM {
+    cursor: pointer;
+}
+
 
 /* Smartphones */
 @media (orientation: portrait) {
@@ -258,6 +262,7 @@ canvas {
 
 
 @media (pointer: coarse) {
+
     .controls-left,
     .controls-right {
         display: flex;
@@ -265,6 +270,7 @@ canvas {
 }
 
 @media (pointer: fine) {
+
     .controls-left,
     .controls-right {
         display: none;
