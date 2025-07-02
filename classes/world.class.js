@@ -54,7 +54,8 @@ class World {
 
     run() {
         setInterval(() => {
-            console.log(this.character.pos_y, this.character.wasAboveGround(), 'time:', this.character.aboutGroundTime, 'speed:', this.character.speedY);
+            // console.log(this.character.pos_y, this.character.wasAboveGround(), 'time:', this.character.aboutGroundTime, 'speed:', this.character.speedY);
+            this.character.wasAboveGround();
             this.checkThrowObjects();
             this.checkCollisions();
             this.checkGameOver();
