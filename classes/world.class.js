@@ -57,8 +57,6 @@ class World {
             this.checkThrowObjects();
             this.checkCollisions();
             this.checkGameOver();
-            console.log(this.character.pos_y, this.character.wasAboveGround(), 'time:', this.character.aboutGroundTime, 'speed:', this.character.speedY);
-            
         }, 100);
     }
 
@@ -87,13 +85,24 @@ class World {
         for (let i = this.level.enemies.length - 1; i >= 0; i--) {
             const enemy = this.level.enemies[i];
             const thisIsEndboss = this.level.enemies[i] instanceof Endboss;
+            const thisIsSmal = this.level.enemies[i] instanceof ChickenSmall;
             if (this.character.isColliding2(enemy, 'enemy') && !enemy.dead) {
-                if (!this.character.wasAboveGround()) {
+                if (thisIsEndboss) {
                     this.character.hit();
                     this.statusBar.setPercentage(this.character.energy);
                 } else {
-                    this.playSound(this.soundChickenDead, true);
-                    enemy.die(i);
+                    if (!this.character.wasAboveGround()) {
+                        this.character.hit();
+                        this.statusBar.setPercentage(this.character.energy);
+                    } else {
+                        this.playSound(this.soundChickenDead, true);
+                        enemy.die(i);
+                        if (thisIsSmal) {
+                            this.character.jump(20);
+                        } else {
+                            this.character.jump(30);
+                        }
+                    }
                 }
             }
             enemy.enemyDead();

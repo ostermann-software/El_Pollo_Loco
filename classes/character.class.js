@@ -7,6 +7,7 @@ class Character extends MovableObject {
     hurt = this.hurt;
     sleeping = false;
     timeAction = 0;
+    jumpEnemy = false;
 
     images_walking = [
         'img/2_character_pepe/2_walk/W-21.png',
@@ -91,6 +92,9 @@ class Character extends MovableObject {
 
     animate() {
         setInterval(() => {
+            if (this.pos_y > 235) {
+                this.pos_y = 235;
+            }
             if (this.isDead()) {
             }
             else {
@@ -103,7 +107,7 @@ class Character extends MovableObject {
                 }
                 if (keyboard.space && !this.isAboveGround()) {
                     world.playSound(world.soundJump, true);
-                    this.jump();
+                    this.jump(40);
                 }
             }
             this.world.camera_x = -this.pos_x + 100;

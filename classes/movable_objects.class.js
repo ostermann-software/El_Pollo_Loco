@@ -32,9 +32,9 @@ class MovableObject extends DrawableObject {
         }, 50);
     }
 
-    jump() {
+    jump(para) {
         this.currentImage = 0;
-        this.speedY = 40;
+        this.speedY = para;
     }
 
     playAnimation(images) {
@@ -62,8 +62,8 @@ class MovableObject extends DrawableObject {
     }
 
     wasAboveGround() {
-        if (this.pos_y < 234 && this.speedY < 0) {
-            this.aboutGroundTime = 5;
+        if (this.pos_y < 220 && this.speedY < 0) {
+            this.aboutGroundTime = 2;
         } else {
             this.aboutGroundTime -= 1;
             if (this.aboutGroundTime < 0) {
