@@ -92,7 +92,7 @@ class Character extends MovableObject {
 
     animate() {
         setInterval(() => {
-            if (this.pos_y > 235) {
+            if (this.pos_y > 229) {
                 this.pos_y = 235;
             }
             if (this.isDead()) {
