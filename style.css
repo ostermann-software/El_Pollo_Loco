@@ -188,11 +188,13 @@ canvas {
 }
 
 .overlayDisplay {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    right: 0;
+    bottom: 0;
+    /* width: 100vw; */
+    /* min-height: 100vh; */
     background-color: rgba(0, 0, 0, 0.8);
     color: white;
     text-align: center;
@@ -236,7 +238,10 @@ canvas {
 /* Smartphones */
 @media (orientation: portrait) {
     .overlayDisplay {
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
     }
 }
 
