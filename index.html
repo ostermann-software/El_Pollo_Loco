@@ -39,24 +39,28 @@
     <div id="game-container" style="position: relative;" class="gameContainer">
 
         <div class="overlay-description" id="overlayDescription">
-            <p>Anleitung:</p>
-            <p>1. Sammle soviele Flaschen wie möglich ein.</p>
-            <p>2. Springe auf die Hühner oder bewerfe sie mit den Flaschen.</p>
-            <p> Ein Treffer genügt.</p>
-            <p>3. Laufe nicht in die Hühnern.</p>
-            <p>4. Am Ende besiege den Endboss durch Flaschen bewerfen.</p>
-            <p> Dazu benötigst Du 10 Treffer.</p>
+            <p>Anleitung:<br><br>
+            1. Sammle soviele Flaschen wie möglich ein.<br>
+            2. Springe auf die Hühner oder bewerfe sie mit den Flaschen.<br>
+            Ein Treffer genügt.<br>
+            3. Laufe nicht in die Hühnern.<br>
+            4. Besiege den Endboss durch Flaschen werfen.<br>
+            Dazu benötigst Du 10 Treffer.<br>
+            <br>
+            PC: Pfeil links/rechts: laufe, Leertaste: springe, d: werfe Flasche<br>
+            Smartpone, Tablet: Button erscheinen unten bei Spielstart.
+            </p>
             <button onclick="closeDescription()" class="buttonA">zurück</button>
         </div>
 
         <div class="overlay-description" id="overlayImpressum">
-            <p>Impressum</p>
-            <p>Informationen über den Dienstanbieter.</p>
-            <p>Christian Ostermann</p>
-            <p>Rubensweg 9</p>
-            <p>37284 Waldkappel</p>
-            <p>E-Mail: ostermann-software@gmx.de</p>
-            <p>Tel.: 0176 316 23 440</p>
+            <p>Impressum:<br><br>
+            Informationen über den Dienstanbieter.<br>
+            Christian Ostermann<br>
+            Rubensweg 9<br>
+            37284 Waldkappel<br>
+            E-Mail: ostermann-software@gmx.de<br>
+            Tel.: 0176 316 23 440</p>
             <button onclick="closeImpressum()" class="buttonA">zurück</button>
         </div>
 
@@ -64,16 +68,16 @@
             <!-- <h1>El pollo loco</h1> -->
             <img src="img/9_intro_outro_screens/start/startscreen_1.png" alt="">
 
-            <div class="legency">
+            <!-- <div class="legency"> -->
                 <div class="Startbutton">
-                    <button onclick="startGame()" class="buttonSt">Spiel starten</button>
                     <button onclick="showDescription()" class="buttonA">Anleitung</button>
+                    <button onclick="startGame()" class="buttonSt">Spiel starten</button>
                     <button onclick="showImpressum()" class="buttonA">Impressum</button>
                 </div>
-                <div class="legencyT">Pfeil links/rechts: laufe</div>
-                <div class="legencyT">Leertaste: springe</div>
-                <div class="legencyT">d: werfe Flasche</div>
-            </div>
+                <!-- <div class="legencyT"></div>
+                <div class="legencyT"></div>
+                <div class="legencyT"></div> -->
+            <!-- </div> -->
         </div>
 
         <canvas id="canvas" width="720" height="480" style="display: none;"></canvas>

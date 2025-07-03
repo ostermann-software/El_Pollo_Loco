@@ -125,11 +125,11 @@ canvas {
 
 .Startbutton {
     position: absolute;
-    top: 50px;
-    width: 100%;
+    top: 0px;
+    width: 78%;
+    margin-top: 6%;
     display: flex;
-    justify-content: center;
-    padding: 20px 20px;
+    justify-content: space-around;
     border: 20px;
     box-sizing: border-box;
     z-index: 10;
@@ -163,7 +163,7 @@ canvas {
 .buttonSt {
     position: relative;
     width: 120px;
-    margin-top: 10%;
+    height: 48px;
     padding: 10px;
     border-radius: 100%;
     border-width: 4px;
@@ -181,7 +181,7 @@ canvas {
 .buttonA {
     position: relative;
     width: 120px;
-    margin-top: 10%;
+    height: 48px;
     padding: 10px;
     border-radius: 100%;
     border-width: 4px;
@@ -197,7 +197,7 @@ canvas {
     top: 10px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     flex-direction: row;
     z-index: 10;
 }
