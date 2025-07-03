@@ -183,11 +183,11 @@ window.addEventListener('load', () => {
     const btnD = document.getElementById('buttonD');
     if (btnL) {
         btnL.addEventListener('touchstart', (e) => {
-            e.preventDefault();
+            if (e.cancelable) e.preventDefault();
             keyboard.left = true;
         });
         btnL.addEventListener('touchend', (e) => {
-            e.preventDefault();
+            if (e.cancelable) e.preventDefault();
             keyboard.left = false;
         });
         btnL.addEventListener('mousedown', () => keyboard.left = true);
@@ -195,11 +195,11 @@ window.addEventListener('load', () => {
     }
     if (btnR) {
         btnR.addEventListener('touchstart', (e) => {
-            e.preventDefault();
+            if (e.cancelable) e.preventDefault();
             keyboard.right = true;
         });
         btnR.addEventListener('touchend', (e) => {
-            e.preventDefault();
+            if (e.cancelable) e.preventDefault();
             keyboard.right = false;
         });
         btnR.addEventListener('mousedown', () => keyboard.right = true);
@@ -207,11 +207,11 @@ window.addEventListener('load', () => {
     }
     if (btnU) {
         btnU.addEventListener('touchstart', (e) => {
-            e.preventDefault();
+            if (e.cancelable) e.preventDefault();
             keyboard.space = true;
         });
         btnU.addEventListener('touchend', (e) => {
-            e.preventDefault();
+            if (e.cancelable) e.preventDefault();
             keyboard.space = false;
         });
         btnU.addEventListener('mousedown', () => keyboard.space = true);
@@ -219,11 +219,11 @@ window.addEventListener('load', () => {
     }
     if (btnD) {
         btnD.addEventListener('touchstart', (e) => {
-            e.preventDefault();
+            if (e.cancelable) e.preventDefault();
             keyboard.d = true;
         });
         btnD.addEventListener('touchend', (e) => {
-            e.preventDefault();
+            if (e.cancelable) e.preventDefault();
             keyboard.d = false;
         });
         btnD.addEventListener('mousedown', () => keyboard.d = true);
