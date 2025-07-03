@@ -66,11 +66,9 @@
 
             <div class="legency">
                 <div class="Startbutton">
-                    <button onclick="startGame()" class="buttonS">Spiel starten</button>
+                    <button onclick="startGame()" class="buttonSt">Spiel starten</button>
                     <button onclick="showDescription()" class="buttonA">Anleitung</button>
                     <button onclick="showImpressum()" class="buttonA">Impressum</button>
-                    <!-- <button onclick="fullscreen()" class="buttonS">Vollbild</button>
-                <button onclick="exitFullscreen()" class="buttonS">Kleinbild</button> -->
                 </div>
                 <div class="legencyT">Pfeil links/rechts: laufe</div>
                 <div class="legencyT">Leertaste: springe</div>
@@ -86,19 +84,27 @@
 
         <div class="controls" id="touch-controls">
             <div class="controls-left">
-                <button id="buttonL" class="buttonS">←</button>
-                <button id="buttonR" class="buttonS">→</button>
+                <button id="buttonL" class="buttonS">
+                    <img src="assets/L.png" style="width:33px; height:32px;">
+                </button>
+                <button id="buttonR" class="buttonS">
+                    <img src="assets/R.png" style="width:33px; height:32px;">
+                </button>
             </div>
             <div class="controls-right">
-                <button id="buttonU" class="buttonS">↑</button>
-                <button id="buttonD" class="buttonS">🎯</button>
+                <button id="buttonU" class="buttonS">
+                    <img src="assets/J.png" style="width:33px; height:32px;">
+                </button>
+                <button id="buttonD" class="buttonS">
+                    <img src="assets/B.png" style="width:33px; height:30px;">
+                </button>
             </div>
         </div>
 
         <div id="game-over-screen" class="overlay hidden">
             <img src="img/9_intro_outro_screens/game_over/end_lost.png" id="game-over-pic" alt="">
             <div class="buttonEnde">
-            <button onclick="startGame()" class="buttonS">Nochmal spielen</button>
+            <button onclick="startGame()" class="buttonSt">Nochmal spielen</button>
             <button onclick="init(), restartGame()" class="buttonA">Zum Start</button>
             </div>
         </div>

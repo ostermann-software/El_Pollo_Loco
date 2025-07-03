@@ -95,35 +95,18 @@ canvas {
 .controls-right {
     display: none;
     justify-content: space-between;
-    gap: 20px;
-    padding: 0px 10px;
+    /* gap: 20px; */
+    padding: 0px 0px;
 }
 
 .controls-left button,
 .controls-right button {
-    width: 72px;
-    height: 28px;
-    border-radius: 50%;
-    border: none;
-    background-color: #ffa500;
-    font-size: 24px;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
     transition: transform 0.1s;
 }
 
 .controls button:active {
     transform: scale(0.9);
 }
-
-/* #touch-controls {
-    display: none;
-} */
-
-
 
 .overlay.show {
     opacity: 1;
@@ -162,26 +145,46 @@ canvas {
 
 .buttonS {
     position: relative;
-    width: 100px;
-    /* margin-bottom: 10%; */
-    /* width: 10%;
-    height: 10%; */
+    width: 120px;
+    height: 32px;
+    border-radius: 100%;
+    border-width: 4px;
+    border-color: #c96a1c;
+    background-color: rgb(200, 255, 0);
+    z-index: 20;
+    cursor: pointer;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.buttonSt {
+    position: relative;
+    width: 120px;
     margin-top: 10%;
     padding: 10px;
     border-radius: 100%;
+    border-width: 4px;
     border-color: #c96a1c;
     background-color: rgb(200, 255, 0);
     z-index: 20;
     cursor: pointer;
     font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .buttonA {
     position: relative;
-    width: 100px;
+    width: 120px;
     margin-top: 10%;
     padding: 10px;
     border-radius: 100%;
+    border-width: 4px;
     border-color: #c96a1c;
     background-color: rgb(255, 153, 0);
     z-index: 20;
