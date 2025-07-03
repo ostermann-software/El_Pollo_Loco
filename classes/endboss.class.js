@@ -2,7 +2,6 @@ class Endboss extends MovableObject {
 
     speed = 20;
     attack = false;
-
     images_walk = [
         'img/4_enemie_boss_chicken/1_walk/G1.png',
         'img/4_enemie_boss_chicken/1_walk/G2.png',
@@ -58,6 +57,7 @@ class Endboss extends MovableObject {
         this.animate();
     }
 
+
     animate() {
         if (!(this instanceof Endboss)) return;
         this.animInterval = setInterval(() => {
@@ -88,6 +88,7 @@ class Endboss extends MovableObject {
         }, 200);
     }
 
+    
     die(index) {
         this.loadImage(this.images_dead[0]);
         clearInterval(this.moveInterval);

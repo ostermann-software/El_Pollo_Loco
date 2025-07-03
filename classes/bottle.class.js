@@ -5,6 +5,7 @@ class Bottle extends DrawableObject {
         'img/6_salsa_bottle/2_salsa_bottle_on_ground.png',
     ];
 
+
     constructor() {
         super();
         let arr = Math.trunc(Math.random()*2);
@@ -13,7 +14,6 @@ class Bottle extends DrawableObject {
         this.pos_y = 340;
         this.height = 70;
         this.width = 60;
-
     }
 
 }

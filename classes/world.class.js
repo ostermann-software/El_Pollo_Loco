@@ -1,5 +1,3 @@
-
-
 class World {
     character = new Character();
     level = createLevel1();
@@ -47,20 +45,22 @@ class World {
         this.run();
     }
 
+
     setWorld() {
         this.character.world = this;
         this.playSound(this.soundBack, true);
     }
 
+
     run() {
         setInterval(() => {
-            // console.log(this.character.pos_y, this.character.wasAboveGround(), 'time:', this.character.aboutGroundTime, 'speed:', this.character.speedY);
             this.character.wasAboveGround();
             this.checkThrowObjects();
             this.checkCollisions();
             this.checkGameOver();
         }, 100);
     }
+
 
     checkThrowObjects() {
         if (this.keyboard.d && this.bottleCount >= 1 && this.canThrow) {
@@ -83,6 +83,7 @@ class World {
         }
     }
 
+
     checkCollisions() {
         for (let i = this.level.enemies.length - 1; i >= 0; i--) {
             const enemy = this.level.enemies[i];
@@ -98,7 +99,7 @@ class World {
                         this.statusBar.setPercentage(this.character.energy);
                     } else {
                         this.playSound(this.soundChickenDead, true);
-                        enemy.die(i);
+                        enemy.die();
                         if (thisIsSmal) {
                             this.character.jump(20);
                         } else {
@@ -130,7 +131,7 @@ class World {
                         this.throwableObjects.splice(index, 1);
                     }
                     this.playSound(this.soundChickenDead, true);
-                    enemy.die(i);
+                    enemy.die();
                 }
                 if (endboss && thisIsEndboss) {
                     if (endboss.isColliding2(bottle, 'bottle')) {
@@ -145,6 +146,7 @@ class World {
                 }
             }
         });
+
         for (let i = this.level.coins.length - 1; i >= 0; i--) {
             const coin = this.level.coins[i];
             if (this.character.isColliding2(coin, 'coin')) {
@@ -155,6 +157,7 @@ class World {
                 this.statusBarCoin.setPercentage(this.coinCount);
             }
         };
+
         for (let i = this.level.bottles.length - 1; i >= 0; i--) {
             const bottle = this.level.bottles[i];
             if (this.character.isColliding2(bottle, 'bottle')) {
@@ -167,13 +170,11 @@ class World {
         };
     }
 
+
     draw() {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-
         this.ctx.translate(this.camera_x, 0);
         this.addObjectToMap(this.level.backgroundobjects);
-
-
         this.addObjectToMap(this.level.coins);
         this.addObjectToMap(this.level.bottles);
         this.addObjectToMap(this.level.clouds);
@@ -182,16 +183,15 @@ class World {
         this.drawEndbossHealthBar();
         this.adToMap(this.character);
         this.ctx.translate(-this.camera_x, 0);
-
         this.adToMap(this.statusBar);
         this.adToMap(this.statusBarBottle);
         this.adToMap(this.statusBarCoin);
-
         let self = this;
         requestAnimationFrame(function () {
             self.draw();
         })
     }
+
 
     addObjectToMap(objects) {
         objects.forEach(mo => {
@@ -199,17 +199,17 @@ class World {
         });
     }
 
+
     adToMap(mo) {
         if (mo.otherDirection) {
             this.flipImage(mo);
         }
         mo.draw(this.ctx);
-        // mo.drawFrame(this.ctx);
-
         if (mo.otherDirection) {
             this.flipImageBack(mo);
         }
     }
+
 
     flipImage(mo) {
         this.ctx.save();
@@ -218,10 +218,12 @@ class World {
         mo.pos_x = mo.pos_x * -1;
     }
 
+
     flipImageBack(mo) {
         mo.pos_x = mo.pos_x * -1;
         this.ctx.restore();
     }
+
 
     drawEndbossHealthBar() {
         const endboss = this.level.enemies.find(e => e instanceof Endboss);
@@ -242,6 +244,7 @@ class World {
         this.ctx.strokeRect(barX, barY, barWidth, barHeight);
     }
 
+
     checkGameOver() {
         const endboss = this.level.enemies.find(e => e instanceof Endboss);
         if (this.character.isDead() && !this.gameOverAlreadyTriggered) {
@@ -261,6 +264,7 @@ class World {
         }
     }
 
+
     playSound(sound, begin) {
         if (!isMuted) {
             if (begin) {
@@ -269,7 +273,6 @@ class World {
             sound.play();
         }
     }
-
 }
 
 

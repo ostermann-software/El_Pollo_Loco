@@ -1,5 +1,3 @@
-
-
 class ChickenSmall extends MovableObject {
 
     images_walking = [
@@ -7,8 +5,8 @@ class ChickenSmall extends MovableObject {
         'img/3_enemies_chicken/chicken_small/1_walk/2_w.png',
         'img/3_enemies_chicken/chicken_small/1_walk/3_w.png',
     ];
-
     image_dead = 'img/3_enemies_chicken/chicken_small/2_dead/dead.png';
+
 
     constructor() {
         super();
@@ -22,6 +20,7 @@ class ChickenSmall extends MovableObject {
         this.animate();
     }
 
+
     animate() {
         this.speed = 0.2 + Math.random() * 0.8;
         this.moveInterval = setInterval(() => {
@@ -32,17 +31,13 @@ class ChickenSmall extends MovableObject {
         }, 200);
     }
 
-    die(index) {
+
+    die() {
         this.loadImage(this.image_dead);
         clearInterval(this.moveInterval);
         clearInterval(this.animInterval);
         this.speed = 0;
         this.dead = true;
-        // setTimeout(() => {
-        //     if (this.level && this.level.enemies) {
-        //         this.level.enemies.splice(index, 1);
-        //     }
-        // }, 1000);
     }
 
 }

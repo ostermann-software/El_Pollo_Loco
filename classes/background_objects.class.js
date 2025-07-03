@@ -1,5 +1,3 @@
-
-
 class BackgroundObject extends MovableObject {
 
     constructor(imagePath, pos_x) {
@@ -10,6 +8,7 @@ class BackgroundObject extends MovableObject {
         this.pos_x = pos_x;
         this.pos_y = 480 - this.height;
     }
+    
 }
 
 

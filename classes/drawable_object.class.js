@@ -7,14 +7,17 @@ class DrawableObject {
     height = 200;
     width = 100;
 
+
     loadImage(path) {
-        this.img = new Image(); // this.img = document.getElementById('image') <img id="image"> ...
+        this.img = new Image();
         this.img.src = path;
     }
+
 
     draw(ctx) {
         ctx.drawImage(this.img, this.pos_x, this.pos_y, this.width, this.height)
     }
+
 
     loadImages(arr) {
         arr.forEach(path => {
@@ -24,6 +27,7 @@ class DrawableObject {
         });
     }
 
+    
     drawFrame(ctx) {
         if (this instanceof Character) {
             ctx.beginPath();
