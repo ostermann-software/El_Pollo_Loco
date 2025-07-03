@@ -51,10 +51,11 @@ function closeImpressum() {
     document.getElementById('overlayImpressum').style.display = 'none';
 }
 
+const screen = document.getElementById('game-over-screen');
+const picture = document.getElementById('game-over-pic');
+
 
 function showGameOverScreen(win) {
-    const screen = document.getElementById('game-over-screen');
-    const picture = document.getElementById('game-over-pic');
     if (win) {
         picture.src = "img/9_intro_outro_screens/game_over/end_win.png";
     } else {

@@ -29,15 +29,10 @@
     <script src="classes/level.class.js"></script>
     <script src="levels/level1.js"></script>
     <script src="js/game.js"></script>
-
 </head>
 
 <body onload="init()">
-
-
-
     <div id="game-container" style="position: relative;" class="gameContainer">
-
         <div class="overlay-description" id="overlayDescription">
             <p>Anleitung:<br><br>
             1. Sammle soviele Flaschen wie möglich ein.<br>
@@ -52,7 +47,6 @@
             </p>
             <button onclick="closeDescription()" class="buttonA">zurück</button>
         </div>
-
         <div class="overlay-description" id="overlayImpressum">
             <p>Impressum:<br><br>
             Informationen über den Dienstanbieter.<br>
@@ -63,7 +57,6 @@
             Tel.: 0176 316 23 440</p>
             <button onclick="closeImpressum()" class="buttonA">zurück</button>
         </div>
-
         <div id="start-screen" class="overlay">
             <img src="img/9_intro_outro_screens/start/startscreen_1.png" alt="">
                 <div class="Startbutton">
@@ -72,13 +65,10 @@
                     <button onclick="showImpressum()" class="buttonA">Impressum</button>
                 </div>
         </div>
-
         <canvas id="canvas" width="720" height="480" style="display: none;"></canvas>
-
         <div class="mainButton">
             <button id="buttonMute" tabindex="-1" class="buttonM">🔈Sound aus</button>
         </div>
-
         <div class="controls" id="touch-controls">
             <div class="controls-left">
                 <button id="buttonL" class="buttonS">
@@ -97,7 +87,6 @@
                 </button>
             </div>
         </div>
-
         <div id="game-over-screen" class="overlay hidden">
             <img src="img/9_intro_outro_screens/game_over/end_lost.png" id="game-over-pic" alt="">
             <div class="buttonEnde">
@@ -105,13 +94,10 @@
             <button onclick="init(), restartGame()" class="buttonA">Zum Start</button>
             </div>
         </div>
-
     </div>
-
     <div class="overlayDisplay">
         <p>Drehe Dein Gerät in Querformat!</p>
     </div>
-
 </body>
 
 </html>
