@@ -51,22 +51,19 @@ function closeImpressum() {
     document.getElementById('overlayImpressum').style.display = 'none';
 }
 
-const screen = document.getElementById('game-over-screen');
-const picture = document.getElementById('game-over-pic');
-
 
 function showGameOverScreen(win) {
     if (win) {
-        picture.src = "img/9_intro_outro_screens/game_over/end_win.png";
+        document.getElementById('game-over-pic').src = "img/9_intro_outro_screens/game_over/end_win.png";
     } else {
-        picture.src = "img/9_intro_outro_screens/game_over/end_lost.png";
+        document.getElementById('game-over-pic').src = "img/9_intro_outro_screens/game_over/end_lost.png";
     }
     document.getElementById('canvas').style.display = 'none';
-    screen.classList.remove('hidden');
-    screen.style.display = 'flex';
+    document.getElementById('game-over-screen').classList.remove('hidden');
+    document.getElementById('game-over-screen').style.display = 'flex';
     document.getElementById('touch-controls').style.display = 'none';
     setTimeout(() => {
-        screen.classList.add('visible');
+        document.getElementById('game-over-screen').classList.add('visible');
     }, 50);
     stopAllSounds();
 }
