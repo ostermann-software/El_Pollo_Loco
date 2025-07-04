@@ -183,60 +183,82 @@ window.addEventListener("keyup", (e) => {
 });
 
 
+const btnL = document.getElementById('buttonL');
+const btnR = document.getElementById('buttonR');
+const btnU = document.getElementById('buttonU');
+const btnD = document.getElementById('buttonD');
+
+
 window.addEventListener('load', () => {
-    const btnL = document.getElementById('buttonL');
-    const btnR = document.getElementById('buttonR');
-    const btnU = document.getElementById('buttonU');
-    const btnD = document.getElementById('buttonD');
     if (btnL) {
-        btnL.addEventListener('touchstart', (e) => {
-            if (e.cancelable) e.preventDefault();
-            keyboard.left = true;
-        });
-        btnL.addEventListener('touchend', (e) => {
-            if (e.cancelable) e.preventDefault();
-            keyboard.left = false;
-        });
-        btnL.addEventListener('mousedown', () => keyboard.left = true);
-        btnL.addEventListener('mouseup', () => keyboard.left = false);
+        controlLeft();
     }
     if (btnR) {
-        btnR.addEventListener('touchstart', (e) => {
-            if (e.cancelable) e.preventDefault();
-            keyboard.right = true;
-        });
-        btnR.addEventListener('touchend', (e) => {
-            if (e.cancelable) e.preventDefault();
-            keyboard.right = false;
-        });
-        btnR.addEventListener('mousedown', () => keyboard.right = true);
-        btnR.addEventListener('mouseup', () => keyboard.right = false);
+        controlRight();
     }
     if (btnU) {
-        btnU.addEventListener('touchstart', (e) => {
-            if (e.cancelable) e.preventDefault();
-            keyboard.space = true;
-        });
-        btnU.addEventListener('touchend', (e) => {
-            if (e.cancelable) e.preventDefault();
-            keyboard.space = false;
-        });
-        btnU.addEventListener('mousedown', () => keyboard.space = true);
-        btnU.addEventListener('mouseup', () => keyboard.space = false);
+        controlJump();
     }
     if (btnD) {
-        btnD.addEventListener('touchstart', (e) => {
-            if (e.cancelable) e.preventDefault();
-            keyboard.d = true;
-        });
-        btnD.addEventListener('touchend', (e) => {
-            if (e.cancelable) e.preventDefault();
-            keyboard.d = false;
-        });
-        btnD.addEventListener('mousedown', () => keyboard.d = true);
-        btnD.addEventListener('mouseup', () => keyboard.d = false);
+        controlBottle();
     }
 });
+
+
+function controlLeft() {
+    btnL.addEventListener('touchstart', (e) => {
+        if (e.cancelable) e.preventDefault();
+        keyboard.left = true;
+    });
+    btnL.addEventListener('touchend', (e) => {
+        if (e.cancelable) e.preventDefault();
+        keyboard.left = false;
+    });
+    btnL.addEventListener('mousedown', () => keyboard.left = true);
+    btnL.addEventListener('mouseup', () => keyboard.left = false);
+}
+
+
+function controlRight() {
+    btnR.addEventListener('touchstart', (e) => {
+        if (e.cancelable) e.preventDefault();
+        keyboard.right = true;
+    });
+    btnR.addEventListener('touchend', (e) => {
+        if (e.cancelable) e.preventDefault();
+        keyboard.right = false;
+    });
+    btnR.addEventListener('mousedown', () => keyboard.right = true);
+    btnR.addEventListener('mouseup', () => keyboard.right = false);
+}
+
+
+function controlJump() {
+    btnU.addEventListener('touchstart', (e) => {
+        if (e.cancelable) e.preventDefault();
+        keyboard.space = true;
+    });
+    btnU.addEventListener('touchend', (e) => {
+        if (e.cancelable) e.preventDefault();
+        keyboard.space = false;
+    });
+    btnU.addEventListener('mousedown', () => keyboard.space = true);
+    btnU.addEventListener('mouseup', () => keyboard.space = false);
+}
+
+
+function controlBottle() {
+    btnD.addEventListener('touchstart', (e) => {
+        if (e.cancelable) e.preventDefault();
+        keyboard.d = true;
+    });
+    btnD.addEventListener('touchend', (e) => {
+        if (e.cancelable) e.preventDefault();
+        keyboard.d = false;
+    });
+    btnD.addEventListener('mousedown', () => keyboard.d = true);
+    btnD.addEventListener('mouseup', () => keyboard.d = false);
+}
 
 
 function saveLocalStorage() {
