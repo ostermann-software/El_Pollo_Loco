@@ -3,25 +3,12 @@
  */
 class DrawableObject {
 
-    /** @type {HTMLImageElement} The current image to draw */
     img;
-
-    /** @type {Object.<string, HTMLImageElement>} Cache for loaded images keyed by path */
     imageCache = {};
-
-    /** @type {number} Index of the current image in an animation */
     currentImage = 0;
-
-    /** @type {number} X position on the canvas */
     pos_x = 100;
-
-    /** @type {number} Y position on the canvas */
     pos_y = 200;
-
-    /** @type {number} Height of the object */
     height = 200;
-
-    /** @type {number} Width of the object */
     width = 100;
 
     /**

@@ -4,84 +4,21 @@
  */
 class MovableObject extends DrawableObject {
 
-    /**
-     * Horizontal speed of the object.
-     * @type {number}
-     */
     speed = 1;
-
-    /**
-     * Whether the object is facing the opposite direction (left).
-     * @type {boolean}
-     */
     otherDirection = false;
-
-    /**
-     * Vertical speed (used for jumping/falling).
-     * @type {number}
-     */
     speedY = 0;
-
-    /**
-     * Acceleration affecting vertical speed (gravity).
-     * @type {number}
-     */
     acceleration = 5;
-
-    /**
-     * Current energy (life points).
-     * @type {number}
-     */
     energy = 100;
-
-    /**
-     * Timestamp of the last hit received.
-     * @type {number}
-     */
     lastHit = 0;
-
-    /**
-     * Whether the object is dead.
-     * @type {boolean}
-     */
     dead = false;
-
-    /**
-     * Helper to ensure dead animation starts only once.
-     * @type {boolean}
-     */
     dead_old = false;
-
-    /**
-     * Counter for time spent dead.
-     * @type {number}
-     */
     deadTime = 0;
-
-    /**
-     * Whether the object should be deleted from the level.
-     * @type {boolean}
-     */
     delete = false;
-
-    /**
-     * Counter used to determine if object was recently above ground.
-     * @type {number}
-     */
     aboutGroundTime = 0;
-
-    /**
-     * Offsets for this object's hitbox (position + size).
-     * Used in collision detection.
-     */
     this_off_pos_x = 16;
     this_off_pos_y = 75;
     this_off_width = -30;
     this_off_height = -85;
-
-    /**
-     * Offsets for the colliding object's hitbox.
-     */
     mo_off_pos_x = 16;
     mo_off_pos_y = 75;
     mo_off_width = -30;

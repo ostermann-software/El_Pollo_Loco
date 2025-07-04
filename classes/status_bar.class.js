@@ -5,10 +5,6 @@
  */
 class StatusBar extends DrawableObject {
 
-    /**
-     * Array of image paths representing different health levels.
-     * @type {string[]}
-     */
     images_health = [
         'img/7_statusbars/1_statusbar/2_statusbar_health/green/0.png',
         'img/7_statusbars/1_statusbar/2_statusbar_health/green/20.png',
@@ -17,11 +13,6 @@ class StatusBar extends DrawableObject {
         'img/7_statusbars/1_statusbar/2_statusbar_health/green/80.png',
         'img/7_statusbars/1_statusbar/2_statusbar_health/green/100.png'
     ];
-
-    /**
-     * The current health percentage displayed by the status bar (0-100).
-     * @type {number}
-     */
     percentage = 100;
 
     /**
@@ -30,19 +21,10 @@ class StatusBar extends DrawableObject {
     constructor() {
         super();
         this.loadImages(this.images_health);
-
-        /** @type {number} */
         this.pos_x = 0;
-
-        /** @type {number} */
         this.pos_y = 0;
-
-        /** @type {number} */
         this.width = 200;
-
-        /** @type {number} */
         this.height = 30;
-
         this.setPercentage(this.percentage);
     }
 

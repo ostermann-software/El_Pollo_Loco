@@ -4,33 +4,14 @@
  */
 class Endboss extends MovableObject {
 
-    /**
-     * Movement speed of the boss.
-     * @type {number}
-     */
     speed = 20;
-
-    /**
-     * Whether the boss is currently in attack mode.
-     * @type {boolean}
-     */
     attack = false;
-
-    /**
-     * Image paths for walking animation frames.
-     * @type {string[]}
-     */
     images_walk = [
         'img/4_enemie_boss_chicken/1_walk/G1.png',
         'img/4_enemie_boss_chicken/1_walk/G2.png',
         'img/4_enemie_boss_chicken/1_walk/G3.png',
         'img/4_enemie_boss_chicken/1_walk/G4.png',
     ];
-
-    /**
-     * Image paths for alert animation frames.
-     * @type {string[]}
-     */
     images_alert = [
         'img/4_enemie_boss_chicken/2_alert/G5.png',
         'img/4_enemie_boss_chicken/2_alert/G6.png',
@@ -41,11 +22,6 @@ class Endboss extends MovableObject {
         'img/4_enemie_boss_chicken/2_alert/G11.png',
         'img/4_enemie_boss_chicken/2_alert/G12.png',
     ];
-
-    /**
-     * Image paths for attack animation frames.
-     * @type {string[]}
-     */
     images_attack = [
         'img/4_enemie_boss_chicken/3_attack/G13.png',
         'img/4_enemie_boss_chicken/3_attack/G14.png',
@@ -56,21 +32,11 @@ class Endboss extends MovableObject {
         'img/4_enemie_boss_chicken/3_attack/G19.png',
         'img/4_enemie_boss_chicken/3_attack/G20.png',
     ];
-
-    /**
-     * Image paths for hurt animation frames.
-     * @type {string[]}
-     */
     images_hurt = [
         'img/4_enemie_boss_chicken/4_hurt/G21.png',
         'img/4_enemie_boss_chicken/4_hurt/G22.png',
         'img/4_enemie_boss_chicken/4_hurt/G23.png',
     ];
-
-    /**
-     * Image paths for dead animation frames.
-     * @type {string[]}
-     */
     images_dead = [
         'img/4_enemie_boss_chicken/5_dead/G24.png',
         'img/4_enemie_boss_chicken/5_dead/G25.png',

@@ -38,7 +38,6 @@ class World {
         this.canvas = canvas;
         this.keyboard = keyboard;
         this.canThrow = true;
-
         this.soundBack.volume = 1.0;
         this.soundChicken.volume = 0.3;
         this.soundBottle.volume = 0.1;
@@ -49,7 +48,6 @@ class World {
         this.soundThrow.volume = 0.1;
         this.soundChickenDead.volume = 0.3;
         this.soundEndbossDead.volume = 0.4;
-
         this.draw();
         this.setWorld();
         this.run();

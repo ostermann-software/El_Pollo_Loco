@@ -3,40 +3,11 @@
  */
 class level {
 
-    /**
-     * Collection of bottles in the level.
-     * @type {Bottle[]}
-     */
     bottles;
-
-    /**
-     * Collection of coins in the level.
-     * @type {Coin[]}
-     */
     coins;
-
-    /**
-     * Collection of enemies in the level.
-     * @type {MovableObject[]}
-     */
     enemies;
-
-    /**
-     * Collection of clouds in the level.
-     * @type {Cloud[]}
-     */
     clouds;
-
-    /**
-     * Collection of background objects in the level.
-     * @type {BackgroundObject[]}
-     */
     backgroundobjects;
-
-    /**
-     * The x position where the level ends.
-     * @type {number}
-     */
     level_end_x = 719 * 3;
 
     /**
@@ -53,7 +24,6 @@ class level {
         this.enemies = enemies;
         this.clouds = clouds;
         this.backgroundobjects = backgroundobjects;
-
         this.enemies.forEach(enemy => enemy.level = this);
     }
 }
