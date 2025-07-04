@@ -313,7 +313,7 @@ class World {
      */
     checkGameOver() {
         const endboss = this.level.enemies.find(e => e instanceof Endboss);
-        if (this.character.isDead() && !this.gameOverAlreadyTriggered) {
+        if ((this.character.isDead() || (endboss && endboss.pos_x < 100)) && !this.gameOverAlreadyTriggered) {
             this.gameOverAlreadyTriggered = true;
             setTimeout(() => showGameOverScreen(false), 2000);
         } else if (endboss && endboss.isDead() && !this.gameOverAlreadyTriggered) {
