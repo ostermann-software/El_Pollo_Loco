@@ -16,6 +16,8 @@ class World {
     bottleCount = 0;
     coinCount = 0;
     gameOverAlreadyTriggered = false;
+    gameTime = 0;
+    score = 0;
 
     soundBack = new Audio('audio/backgroundSound.mp3');
     soundChicken = new Audio('audio/chicken.mp3');
@@ -65,13 +67,25 @@ class World {
      * Starts the main game loop that periodically updates the world state.
      */
     run() {
-        setInterval(() => {
+        this.intervalId = setInterval(() => {
             this.character.wasAboveGround();
             this.checkThrowObjects();
             this.checkCollisions();
             this.checkGameOver();
+            this.gameTime += 0.1;
+            // console.log('Leben:', this.statusBar.percentage, 'Flaschen:', this.bottleCount, 'Coins:', this.coinCount, 'Enemies:', 11 - this.level.enemies.length, 'Zeit:', this.gameTime);
+            this.score = (this.statusBar.percentage * 10) + this.bottleCount * 50 + this.coinCount * 50 + (11 - this.level.enemies.length) * 100 - this.gameTime * 10;
+            console.log(this.score);
         }, 100);
     }
+
+    /**
+     * Stops the main game loop that periodically updates the world state.
+     */
+    stop() {
+        clearInterval(this.intervalId);
+    }
+
 
     /**
      * Checks if the character can throw an object and initiates throwing.
@@ -319,6 +333,7 @@ class World {
             this.gameOverAlreadyTriggered = true;
             setTimeout(() => showGameOverScreen(true), 1000);
         }
+        if (this.gameOverAlreadyTriggered ) this.stop();
     }
 
     /**

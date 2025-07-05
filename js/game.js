@@ -43,6 +43,7 @@ function startGame() {
     document.getElementById('canvas').style.display = 'block';
     document.getElementById('touch-controls').style.display = 'flex';
     world = new World(canvas, keyboard);
+    world.gameTime = 0;
 }
 
 /**
@@ -92,6 +93,7 @@ function showGameOverScreen(win) {
         document.getElementById('game-over-pic').src = "img/9_intro_outro_screens/game_over/end_win.png";
     } else {
         document.getElementById('game-over-pic').src = "img/9_intro_outro_screens/game_over/end_lost.png";
+        world.score = 0;
     }
     document.getElementById('canvas').style.display = 'none';
     document.getElementById('game-over-screen').classList.remove('hidden');
@@ -101,6 +103,7 @@ function showGameOverScreen(win) {
         document.getElementById('game-over-screen').classList.add('visible');
     }, 50);
     stopAllSounds();
+    document.getElementById('scorehtml').innerHTML = 'Score: ' + world.score.toFixed(0);
 }
 
 /**
@@ -315,3 +318,19 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+
+function saveScore() {
+    let saveName = document.getElementById('entername').value;
+    let saveScore = world.score.toFixed(0);
+    scoreArray.push({ name: saveName, score: saveScore });
+    saveDatabase();
+    console.log(scoreArray);
+    init();
+    restartGame();
+}
+
+
+function clearScore() {
+    initDatabase();
+}
