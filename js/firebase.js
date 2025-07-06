@@ -68,10 +68,12 @@ async function putData(path = "", data = {}) {
 }
 
 
-// Funktion zum Rendern der Tabelle
 function renderScore() {
-    // Sortiere die Daten nach 'gesamtergebnis' absteigend
+    // Sortiere die Daten nach 'score' absteigend
     const sortedData = [...scoreArray].sort((a, b) => b.score - a.score);
+
+    // Begrenze auf die Top 5
+    const topFive = sortedData.slice(0, 5);
 
     // Leere die vorherige Tabelle
     const contentSection = document.getElementById("contentScore");
@@ -81,7 +83,7 @@ function renderScore() {
     const table = document.createElement("table");
     table.classList.add("resultTable");
 
-    // Erstelle die Kopfzeile der Tabelle
+    // Erstelle die Kopfzeile
     const headerRow = document.createElement("tr");
     headerRow.innerHTML = `
         <th>Platz</th>
@@ -90,8 +92,8 @@ function renderScore() {
     `;
     table.appendChild(headerRow);
 
-    // Erstelle eine Zeile für jede Person
-    sortedData.forEach((entry, index) => {
+    // Erstelle eine Zeile für jeden Eintrag
+    topFive.forEach((entry, index) => {
         const row = document.createElement("tr");
         row.innerHTML = `
             <td>${index + 1}</td>
@@ -101,9 +103,10 @@ function renderScore() {
         table.appendChild(row);
     });
 
-    // Füge die Tabelle dem Inhalt hinzu
+    // Füge die Tabelle dem DOM hinzu
     contentSection.appendChild(table);
 }
+
 
 
 

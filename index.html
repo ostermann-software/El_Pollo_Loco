@@ -36,36 +36,36 @@
     <div id="game-container" style="position: relative;" class="gameContainer">
         <div class="overlay-description" id="overlayDescription">
             <p>Anleitung:<br><br>
-            1. Sammle soviele Flaschen wie möglich ein.<br>
-            2. Springe auf die Hühner oder bewerfe sie mit den Flaschen.<br>
-            Ein Treffer genügt.<br>
-            3. Laufe nicht in die Hühnern.<br>
-            4. Besiege den Endboss durch Flaschen werfen.<br>
-            Dazu benötigst Du 10 Treffer.<br>
-            <br>
-            PC: Pfeil links/rechts: laufe, Leertaste: springe, d: werfe Flasche<br>
-            Smartpone, Tablet: Button erscheinen unten bei Spielstart.
+                1. Sammle soviele Flaschen wie möglich ein.<br>
+                2. Springe auf die Hühner oder bewerfe sie mit den Flaschen.<br>
+                Ein Treffer genügt.<br>
+                3. Laufe nicht in die Hühnern.<br>
+                4. Besiege den Endboss durch Flaschen werfen.<br>
+                Dazu benötigst Du 10 Treffer.<br>
+                <br>
+                PC: Pfeil links/rechts: laufe, Leertaste: springe, d: werfe Flasche<br>
+                Smartpone, Tablet: Button erscheinen unten bei Spielstart.
             </p>
             <button onclick="closeDescription()" class="buttonA">zurück</button>
         </div>
         <div class="overlay-description" id="overlayImpressum">
             <p>Impressum:<br><br>
-            Informationen über den Dienstanbieter.<br>
-            Christian Ostermann<br>
-            Rubensweg 9<br>
-            37284 Waldkappel<br>
-            E-Mail: ostermann-software@gmx.de<br>
-            Tel.: 0176 316 23 440</p>
+                Informationen über den Dienstanbieter.<br>
+                Christian Ostermann<br>
+                Rubensweg 9<br>
+                37284 Waldkappel<br>
+                E-Mail: ostermann-software@gmx.de<br>
+                Tel.: 0176 316 23 440</p>
             <button onclick="closeImpressum()" class="buttonA">zurück</button>
         </div>
         <div id="start-screen" class="overlay">
             <img src="img/9_intro_outro_screens/start/startscreen_1.png" alt="">
             <section id="contentScore" class="score-table"></section>
-                <div class="Startbutton">
-                    <button onclick="showDescription()" class="buttonA">Anleitung</button>
-                    <button onclick="startGame()" class="buttonSt">Spiel starten</button>
-                    <button onclick="showImpressum()" class="buttonA">Impressum</button>
-                </div>
+            <div class="Startbutton">
+                <button onclick="showDescription()" class="buttonA">Anleitung</button>
+                <button onclick="startGame()" class="buttonSt">Spiel starten</button>
+                <button onclick="showImpressum()" class="buttonA">Impressum</button>
+            </div>
         </div>
         <canvas id="canvas" width="720" height="480" style="display: none;"></canvas>
         <div class="mainButton">
@@ -92,11 +92,17 @@
         <div id="game-over-screen" class="overlay hidden">
             <img src="img/9_intro_outro_screens/game_over/end_lost.png" id="game-over-pic" alt="">
             <div class="buttonEnde">
-            <button onclick="startGame()" class="buttonSt">Nochmal spielen</button>
-            <button onclick="init(), restartGame()" class="buttonA">Zum Start</button>
-            <div class="enter-name">
-                <button onclick="clearScore()">Clear!</button> <button onclick="saveScore()">Save</button> <input type="text" id="entername" class="input-name" placeholder="Dein Name?"> <p id="scorehtml">Score:</p>
-            </div>
+                <div class="end-button">
+                    <button onclick="startGame()" class="buttonSt">Nochmal spielen</button>
+                    <button onclick="init(), restartGame()" class="buttonA">Zum Start</button>
+                </div>
+                <div class="enter-name">
+                    <!-- <button onclick="clearScore()" class="buttonName">Clear!</button> -->
+                    <button onclick="saveScore()" class="buttonName">Save</button>
+                    <input type="text" id="entername" class="input-name" placeholder="Dein Name?">
+                    <p id="scorehtmlText" class="score-view">Score:</p>
+                    <p id="scorehtml" class="score-view"></p>
+                </div>
             </div>
         </div>
     </div>

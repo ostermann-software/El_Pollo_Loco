@@ -75,7 +75,7 @@ class World {
             this.gameTime += 0.1;
             // console.log('Leben:', this.statusBar.percentage, 'Flaschen:', this.bottleCount, 'Coins:', this.coinCount, 'Enemies:', 11 - this.level.enemies.length, 'Zeit:', this.gameTime);
             this.score = (this.statusBar.percentage * 10) + this.bottleCount * 50 + this.coinCount * 50 + (11 - this.level.enemies.length) * 100 - this.gameTime * 10;
-            console.log(this.score);
+            // console.log(this.score);
         }, 100);
     }
 

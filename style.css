@@ -244,18 +244,55 @@ canvas {
     cursor: pointer;
 }
 
-.enter-name {
-    width: 200px;
+.end-button {
+    width: 80%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
+}
 
+.enter-name {
+    width: 60vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+.buttonName {
+    width: 120px;
+    height: 48px;
+    z-index: 20;
+    position: relative;
+    padding: 10px;
+    border-radius: 100%;
+    border-width: 4px;
+    border-color: #c96a1c;
+    background-color: rgb(200, 255, 0);
+    z-index: 20;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .input-name {
-    width: 100px;
+    width: 160px;
     height: 24px;
+    border-radius: 10%;
+    border-width: 0px;
+    background-color: rgba(242, 255, 230, 0.8);
+}
+
+.score-view {
+    width: 80px;
+    height: 24px;
+    border-radius: 10%;
+    background-color: rgba(242, 255, 230, 0.8);
+    color: rgba(0, 0, 0, 0.5)
 }
 
 .score-table {
@@ -297,6 +334,7 @@ canvas {
 }
 
 @media (pointer: coarse) {
+
     .controls-left,
     .controls-right {
         display: flex;
@@ -304,6 +342,7 @@ canvas {
 }
 
 @media (pointer: fine) {
+
     .controls-left,
     .controls-right {
         display: none;

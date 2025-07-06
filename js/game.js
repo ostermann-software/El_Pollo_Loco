@@ -103,7 +103,7 @@ function showGameOverScreen(win) {
         document.getElementById('game-over-screen').classList.add('visible');
     }, 50);
     stopAllSounds();
-    document.getElementById('scorehtml').innerHTML = 'Score: ' + world.score.toFixed(0);
+    document.getElementById('scorehtml').innerHTML = world.score.toFixed(0);
 }
 
 /**
@@ -321,6 +321,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 function saveScore() {
+    document.getElementById('scorehtml').innerHTML = world.score.toFixed(0);
     let saveName = document.getElementById('entername').value;
     let saveScore = world.score.toFixed(0);
     scoreArray.push({ name: saveName, score: saveScore });
